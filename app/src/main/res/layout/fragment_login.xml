@@ -10,16 +10,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
+        android:background="@color/teal_700"
         tools:context=".LoginFragment">
 
         <Button
             android:id="@+id/bt_signInWithGoogle"
             style="@style/buttonStyle"
-            android:layout_marginTop="16dp"
+            android:layout_margin="20dp"
             android:backgroundTint="@color/white"
-            android:text="Sign In with Google"
-            android:textAllCaps="false"
+            android:fontFamily="@font/andika"
+            android:text="@string/sign_in_with_google"
+            android:textAllCaps="true"
+            android:textStyle="bold"
             android:textColor="@color/black"
             app:icon="@drawable/ic_new_google_favicon"
             app:iconTint="@null"
@@ -27,8 +29,33 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/welcome_prompt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/_458571"/>
+
+        <TextView
+            android:id="@+id/welcome_prompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Let's Start Learning"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_signInWithGoogle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/bt_signInWithGoogle"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
