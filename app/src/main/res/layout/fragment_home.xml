@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/popular_course_prompt"
             style="@style/prompt_style"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Popular Courses"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/tv_seeAllPopular"
@@ -113,7 +113,7 @@
         <TextView
             android:id="@+id/categories_prompt"
             style="@style/prompt_style"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="Categories"
             android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/tv_seeAllCategories"
@@ -134,7 +134,7 @@
             android:id="@+id/categoryRecyclerView"
             android:layout_width="0dp"
             android:layout_height="65dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/tv_seeAllCategories"
             app:layout_constraintStart_toStartOf="@+id/categories_prompt"
             app:layout_constraintTop_toBottomOf="@+id/categories_prompt" />
@@ -142,24 +142,96 @@
         <TextView
             android:id="@+id/currently_learning_prompt"
             style="@style/prompt_style"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="4dp"
             android:text="Currently Learning"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/popular_course_prompt"
             app:layout_constraintTop_toBottomOf="@+id/categoryRecyclerView" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/currentLearningRecyclerView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_search"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/categoryRecyclerView"
             app:layout_constraintStart_toStartOf="@+id/currently_learning_prompt"
             app:layout_constraintTop_toBottomOf="@+id/currently_learning_prompt"
-            app:layout_constraintVertical_bias="0.19" />
+            app:layout_constraintVertical_bias="0.0">
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_currentCourseBannerHome"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundImageView"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_currentCourseNameHome"
+                style="@style/course_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/tv_currentCourseAuthorHome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.06"
+                app:layout_constraintStart_toEndOf="@+id/iv_currentCourseBannerHome"
+                app:layout_constraintTop_toTopOf="@+id/iv_currentCourseBannerHome"
+                tools:text="Web Development" />
+
+            <ProgressBar
+                android:id="@+id/progressBarHome"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:progress="80"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_progressHome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_progressHome"
+                app:layout_constraintTop_toTopOf="@+id/tv_progressHome" />
+
+            <TextView
+                android:id="@+id/tv_currentCourseAuthorHome"
+                style="@style/course_content"
+                android:fontFamily="@font/andika"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_currentCourseBannerHome"
+                app:layout_constraintStart_toStartOf="@+id/tv_currentCourseNameHome"
+                app:layout_constraintTop_toBottomOf="@+id/tv_currentCourseNameHome"
+                tools:text="CodeWithHarry" />
+
+            <TextView
+                android:id="@+id/progress_promptHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/andika"
+                android:text="Progress"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_progressHome"
+                app:layout_constraintStart_toStartOf="@+id/iv_currentCourseBannerHome"
+                app:layout_constraintTop_toBottomOf="@+id/iv_currentCourseBannerHome" />
+
+            <TextView
+                android:id="@+id/tv_progressHome"
+                style="@style/course_content"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/andika"
+                android:text="20/29 lesson"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_promptHome"
+                app:layout_constraintEnd_toEndOf="@+id/tv_currentCourseAuthorHome"
+                app:layout_constraintStart_toEndOf="@+id/progress_promptHome"
+                app:layout_constraintTop_toTopOf="@+id/progress_promptHome" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

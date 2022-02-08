@@ -49,12 +49,24 @@ class HomeFragment : Fragment() {
         binding.categoryRecyclerView.adapter = categeoryRecyclerViewAdapter
 
         // current Course
-        val linearLayoutManager3: RecyclerView.LayoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.currentLearningRecyclerView.layoutManager = linearLayoutManager3
+//        val linearLayoutManager3: RecyclerView.LayoutManager =
+//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//        binding.currentLearningRecyclerView.layoutManager = linearLayoutManager3
+//
+//        currentCourseRecyclerViewAdapter = CurrentCourseRecyclerViewAdapter(
+//            listOf(
+//                Course(
+//                    "Web Development",
+//                    "CodeWithHarry",
+//                    "2.5 lakh"
+//                )
+//            )
+//        )
+//        binding.currentLearningRecyclerView.adapter = currentCourseRecyclerViewAdapter
 
-        currentCourseRecyclerViewAdapter = CurrentCourseRecyclerViewAdapter(lst[0])
-        binding.currentLearningRecyclerView.adapter = currentCourseRecyclerViewAdapter
+        binding.ivCurrentCourseBannerHome.setImageResource(R.drawable._458571)
+        binding.tvCurrentCourseNameHome.text = lst[0].name
+        binding.tvCurrentCourseAuthorHome.text = lst[0].author
         // Inflate the layout for this fragment
         return binding.root
     }
