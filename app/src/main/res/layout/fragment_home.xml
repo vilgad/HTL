@@ -102,7 +102,7 @@
             app:layout_constraintTop_toTopOf="@+id/popular_course_prompt" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/courseRecyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
@@ -119,19 +119,19 @@
             app:layout_constraintEnd_toStartOf="@+id/tv_seeAllCategories"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="@+id/popular_course_prompt"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+            app:layout_constraintTop_toBottomOf="@+id/courseRecyclerView" />
 
         <TextView
             android:id="@+id/tv_seeAllCategories"
             style="@style/seeAll_style"
             android:text="See All"
             app:layout_constraintBottom_toBottomOf="@+id/categories_prompt"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="@+id/courseRecyclerView"
             app:layout_constraintStart_toEndOf="@+id/categories_prompt"
             app:layout_constraintTop_toTopOf="@+id/categories_prompt" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+            android:id="@+id/categoryRecyclerView"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginTop="13dp"
@@ -146,17 +146,20 @@
             android:text="Currently Learning"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/popular_course_prompt"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+            app:layout_constraintTop_toBottomOf="@+id/categoryRecyclerView" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currentLearningRecyclerView"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/currently_learning_prompt"
-            app:layout_constraintTop_toBottomOf="@+id/currently_learning_prompt" />
+            app:layout_constraintTop_toBottomOf="@+id/currently_learning_prompt"
+            app:layout_constraintVertical_bias="0.19" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

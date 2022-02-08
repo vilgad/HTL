@@ -6,15 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monarch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var coursesRecyclerViewAdapter: CoursesRecyclerViewAdapter
+    private lateinit var categeoryRecyclerViewAdapter: CategeoryRecyclerViewAdapter
+    private lateinit var currentCourseRecyclerViewAdapter: CurrentCourseRecyclerViewAdapter
+
     val lst: List<Course> = listOf(
-        Course("Web Development", "CodeWithHarry", "25009463"),
-        Course("MVVM Series", "FoxAndroid", "356249"),
-        Course("Android Development", "Cheezy Code", "25292484"),
-        Course("Flutter - One Video", "Apna College", "25292")
+        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
+        Course("MVVM Series", "FoxAndroid", "35k"),
+        Course("Android Development", "Cheezy Code", "25 million"),
+        Course("Flutter - One Video", "Apna College", "2 crore")
     )
     val categ: List<String> =
         listOf("Development", "Cooking", "Personal Growth", "Finance", "Teaching")
@@ -26,6 +32,29 @@ class HomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_home, container, false)
 
         // course recycler view
+        binding.courseRecyclerView.setHasFixedSize(true)
+        val linearLayoutManager1: RecyclerView.LayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.courseRecyclerView.layoutManager = linearLayoutManager1
+
+        coursesRecyclerViewAdapter = CoursesRecyclerViewAdapter((lst))
+        binding.courseRecyclerView.adapter = coursesRecyclerViewAdapter
+
+        // category recycler view
+        val linearLayoutManager2: RecyclerView.LayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.categoryRecyclerView.layoutManager = linearLayoutManager2
+
+        categeoryRecyclerViewAdapter = CategeoryRecyclerViewAdapter(categ)
+        binding.categoryRecyclerView.adapter = categeoryRecyclerViewAdapter
+
+        // current Course
+        val linearLayoutManager3: RecyclerView.LayoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.currentLearningRecyclerView.layoutManager = linearLayoutManager3
+
+        currentCourseRecyclerViewAdapter = CurrentCourseRecyclerViewAdapter(lst[0])
+        binding.currentLearningRecyclerView.adapter = currentCourseRecyclerViewAdapter
         // Inflate the layout for this fragment
         return binding.root
     }

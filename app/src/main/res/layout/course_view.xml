@@ -8,8 +8,8 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="300dp"
-        android:layout_height="270dp">
+        android:layout_width="200dp"
+        android:layout_height="200dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -26,23 +26,23 @@
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/iv_courseBanner"
                     android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:adjustViewBounds="true"
+                    android:layout_height="100dp"
                     android:layout_margin="5dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="courseImage"
                     android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/roundImageView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars"
-                    android:contentDescription="courseImage" />
+                    app:shapeAppearanceOverlay="@style/roundImageView"
+                    tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
                     android:id="@+id/tv_courseName"
                     style="@style/course_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:textSize="15sp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_courseAuthor"
                     app:layout_constraintEnd_toEndOf="@+id/iv_courseBanner"
                     app:layout_constraintStart_toStartOf="@+id/iv_courseBanner"
@@ -53,8 +53,9 @@
                 <TextView
                     android:id="@+id/tv_courseAuthor"
                     style="@style/course_content"
+                    android:fontFamily="@font/andika"
                     android:text="Robert Fox"
-                    android:textSize="15sp"
+                    android:textSize="13sp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_views"
                     app:layout_constraintEnd_toEndOf="@+id/tv_courseName"
                     app:layout_constraintStart_toStartOf="@+id/tv_courseName"
@@ -65,9 +66,10 @@
                     style="@style/course_content"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/andika"
                     android:textColor="@color/green_dark"
-                    android:textSize="15sp"
+                    android:textSize="13sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_courseAuthor"
                     app:layout_constraintTop_toBottomOf="@+id/tv_courseAuthor"
