@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fragmentContainerView" type="id" />
+    <item name="person" type="id" />
+    <item name="settings" type="id" />
+    <item name="profile" type="id" />
+    <item name="wishlist" type="id" />
+    <item name="navigation_blog" type="id" />
+    <item name="navigation_chapter" type="id" />
+</resources>
