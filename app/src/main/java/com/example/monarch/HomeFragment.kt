@@ -14,7 +14,6 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var coursesRecyclerViewAdapter: CoursesRecyclerViewAdapter
     private lateinit var categeoryRecyclerViewAdapter: CategeoryRecyclerViewAdapter
-    private lateinit var currentCourseRecyclerViewAdapter: CurrentCourseRecyclerViewAdapter
 
     val lst: List<Course> = listOf(
         Course("Web Development", "CodeWithHarry", "2.5 lakh"),
@@ -47,22 +46,6 @@ class HomeFragment : Fragment() {
 
         categeoryRecyclerViewAdapter = CategeoryRecyclerViewAdapter(categ)
         binding.categoryRecyclerView.adapter = categeoryRecyclerViewAdapter
-
-        // current Course
-//        val linearLayoutManager3: RecyclerView.LayoutManager =
-//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-//        binding.currentLearningRecyclerView.layoutManager = linearLayoutManager3
-//
-//        currentCourseRecyclerViewAdapter = CurrentCourseRecyclerViewAdapter(
-//            listOf(
-//                Course(
-//                    "Web Development",
-//                    "CodeWithHarry",
-//                    "2.5 lakh"
-//                )
-//            )
-//        )
-//        binding.currentLearningRecyclerView.adapter = currentCourseRecyclerViewAdapter
 
         binding.ivCurrentCourseBannerHome.setImageResource(R.drawable._458571)
         binding.tvCurrentCourseNameHome.text = lst[0].name
