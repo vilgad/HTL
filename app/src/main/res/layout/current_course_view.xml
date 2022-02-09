@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="7dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_currentCourseBanner"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/roundImageView"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_currentCourseName"
+                    style="@style/course_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_currentCourseAuthor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.06"
+                    app:layout_constraintStart_toEndOf="@+id/iv_currentCourseBanner"
+                    app:layout_constraintTop_toTopOf="@+id/iv_currentCourseBanner"
+                    tools:text="Web Development" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:progress="80"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_progress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_progress"
+                    app:layout_constraintTop_toTopOf="@+id/tv_progress" />
+
+                <TextView
+                    android:id="@+id/tv_currentCourseAuthor"
+                    style="@style/course_content"
+                    android:fontFamily="@font/andika"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_currentCourseBanner"
+                    app:layout_constraintStart_toStartOf="@+id/tv_currentCourseName"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_currentCourseName"
+                    tools:text="CodeWithHarry" />
+
+                <TextView
+                    android:id="@+id/progress_prompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/andika"
+                    android:text="Progress"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_progress"
+                    app:layout_constraintStart_toStartOf="@+id/iv_currentCourseBanner"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_currentCourseBanner" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    style="@style/course_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/andika"
+                    android:text="20/29 lesson"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/progressBar"
+                    app:layout_constraintStart_toStartOf="@+id/progress_prompt"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_prompt" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

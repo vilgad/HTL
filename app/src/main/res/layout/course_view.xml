@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_courseBanner"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="5dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="courseImage"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/roundImageView"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tv_courseName"
+                    style="@style/course_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_courseAuthor"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_courseBanner"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/iv_courseBanner"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_courseBanner"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    tools:text="Designing and Fundamentals" />
+
+                <TextView
+                    android:id="@+id/tv_courseAuthor"
+                    style="@style/course_content"
+                    android:fontFamily="@font/andika"
+                    android:text="Robert Fox"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_views"
+                    app:layout_constraintStart_toStartOf="@+id/tv_courseName"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_courseName" />
+
+                <TextView
+                    android:id="@+id/tv_views"
+                    style="@style/course_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/andika"
+                    android:textColor="@color/green_dark"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tv_courseAuthor"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_courseAuthor"
+                    tools:text="9,912,565" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
