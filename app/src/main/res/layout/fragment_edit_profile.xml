@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EditProfile">
+
+
+        <TextView
+            android:id="@+id/editProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Edit Profile:"
+            android:textColor="#80018786"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/EditProfileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/user_profile"
+            app:civ_border_color="#80018786"
+            app:civ_border_width="2dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editProfileText" />
+
+        <TextView
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Full Name"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/EditProfileImage" />
+
+        <EditText
+            android:id="@+id/fullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Name"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/editName" />
+
+        <TextView
+            android:id="@+id/profession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Profession"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+        <EditText
+            android:id="@+id/yourProfession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Profession"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/profession" />
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Country"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/yourProfession" />
+
+        <EditText
+            android:id="@+id/yourCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Country"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/country" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="About You"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/yourCountry" />
+
+        <EditText
+            android:id="@+id/aboutYou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Description"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/about" />
+
+        <TextView
+            android:id="@+id/emailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="E-mail"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/aboutYou" />
+
+        <EditText
+            android:id="@+id/yourEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="E-mail Id"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/emailId" />
+
+        <TextView
+            android:id="@+id/websiteLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Personal Website Link"
+            android:textColor="#757575"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/yourEmailId" />
+
+        <EditText
+            android:id="@+id/yourWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Website Link"
+            android:fontFamily="@font/comfortaa_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/websiteLink" />
+
+        <Button
+            android:id="@+id/cancelEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/customButtonStyle"
+            android:backgroundTint="#80018786"
+            android:text="Cancel Changes"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/saveEdit"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yourWebsite" />
+
+        <Button
+            android:id="@+id/saveEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/customButtonStyle"
+            android:backgroundTint="#80018786"
+            android:text="Save Changes"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancelEdit"
+            app:layout_constraintTop_toBottomOf="@id/yourWebsite" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
