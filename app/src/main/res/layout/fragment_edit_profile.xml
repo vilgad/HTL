@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:context=".EditProfile">
+
+        <TextView
+            android:id="@+id/editProfileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Edit Profile:"
+            android:textColor="#80018786"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/EditProfileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/user_profile"
+            app:civ_border_color="#80018786"
+            app:civ_border_width="2dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/profession"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editProfileText" />
+
+        <TextView
+            android:id="@+id/profession"
+            android:text="Profession"
+            app:layout_constraintBottom_toTopOf="@+id/yourProfession"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditProfileImage"
+            app:layout_constraintVertical_chainStyle="spread"
+            style="@style/editProfilePromptStyle" />
+
+        <EditText
+            android:id="@+id/yourProfession"
+            android:hint="Profession"
+            app:layout_constraintBottom_toTopOf="@+id/country"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/profession"
+            app:layout_constraintTop_toBottomOf="@id/profession"
+            style="@style/editTextStyle" />
+
+        <TextView
+            android:id="@+id/country"
+            style="@style/editProfilePromptStyle"
+            android:text="Country"
+            app:layout_constraintBottom_toTopOf="@+id/yourCountry"
+            app:layout_constraintEnd_toEndOf="@+id/yourProfession"
+            app:layout_constraintStart_toStartOf="@+id/yourProfession"
+            app:layout_constraintTop_toBottomOf="@id/yourProfession" />
+
+        <EditText
+            android:id="@+id/yourCountry"
+            style="@style/editTextStyle"
+            android:hint="Country"
+            app:layout_constraintBottom_toTopOf="@+id/about"
+            app:layout_constraintEnd_toEndOf="@+id/country"
+            app:layout_constraintStart_toStartOf="@+id/country"
+            app:layout_constraintTop_toBottomOf="@id/country" />
+
+        <TextView
+            android:id="@+id/about"
+            android:text="About You"
+            style="@style/editProfilePromptStyle"
+            app:layout_constraintBottom_toTopOf="@+id/aboutYou"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/yourCountry"
+            app:layout_constraintTop_toBottomOf="@id/yourCountry" />
+
+        <EditText
+            android:id="@+id/aboutYou"
+            style="@style/editTextStyle"
+            android:hint="Description"
+            app:layout_constraintBottom_toTopOf="@+id/websiteLink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/about"
+            app:layout_constraintTop_toBottomOf="@id/about" />
+
+        <TextView
+            android:id="@+id/websiteLink"
+            style="@style/editProfilePromptStyle"
+            android:text="Personal Website Link"
+            app:layout_constraintBottom_toTopOf="@+id/yourWebsite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/aboutYou"
+            app:layout_constraintTop_toBottomOf="@+id/aboutYou" />
+
+        <EditText
+            android:id="@+id/yourWebsite"
+            style="@style/editTextStyle"
+            android:hint="Website Link"
+            app:layout_constraintEnd_toEndOf="@+id/websiteLink"
+            app:layout_constraintStart_toStartOf="@+id/websiteLink"
+            app:layout_constraintTop_toBottomOf="@id/websiteLink" />
+
+        <Button
+            android:id="@+id/cancelEdit"
+            style="@style/customButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#80018786"
+            android:text="Cancel Changes"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/saveEdit"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/yourWebsite"
+            app:layout_constraintTop_toBottomOf="@id/yourWebsite"
+            app:layout_constraintVertical_bias="0.24000001" />
+
+        <Button
+            android:id="@+id/saveEdit"
+            style="@style/customButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#80018786"
+            android:text="Save Changes"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelEdit"
+            app:layout_constraintEnd_toEndOf="@+id/yourWebsite"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancelEdit"
+            app:layout_constraintTop_toTopOf="@+id/cancelEdit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
