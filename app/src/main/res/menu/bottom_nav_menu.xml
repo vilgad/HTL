@@ -6,7 +6,7 @@
     <item android:id="@+id/myCoursesFragment"
         android:title="My Courses"
         android:icon="@drawable/ic_courses"/>
-    <item android:id="@+id/favouritesFragment"
+    <item android:id="@+id/coursesFragment"
         android:title="Wishlist"
         android:icon="@drawable/ic_wishlist"/>
     <item android:id="@+id/profileFragment"

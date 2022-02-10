@@ -34,12 +34,14 @@
         <entry key="app/src/main/res/layout/course_view.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/current_course_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_completed_courses.xml" value="0.38385416666666666" />
+        <entry key="app/src/main/res/layout/fragment_courses.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/fragment_my_courses.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_on_going_courses.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_user_follow.xml" value="0.33229166666666665" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.33229166666666665" />
       </map>
     </option>
   </component>

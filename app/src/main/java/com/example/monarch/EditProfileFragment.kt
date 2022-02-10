@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.monarch.databinding.FragmentEditProfileBinding
 
-class EditProfile : Fragment() {
+class EditProfileFragment : Fragment() {
     private lateinit var binding: FragmentEditProfileBinding
 
     override fun onCreateView(
