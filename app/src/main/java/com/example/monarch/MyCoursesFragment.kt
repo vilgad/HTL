@@ -19,6 +19,10 @@ class MyCoursesFragment : Fragment() {
         Course("Web Development", "CodeWithHarry", "2.5 lakh"),
         Course("MVVM Series", "FoxAndroid", "35k"),
         Course("Android Development", "Cheezy Code", "25 million"),
+        Course("Flutter - One Video", "Apna College", "2 crore"),
+        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
+        Course("MVVM Series", "FoxAndroid", "35k"),
+        Course("Android Development", "Cheezy Code", "25 million"),
         Course("Flutter - One Video", "Apna College", "2 crore")
     )
 
