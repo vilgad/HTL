@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProfileFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userCardConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_card"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/user_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:text="Anjela Joy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userCardConstraint"
+            style="@style/promptProfileStyle" />
+
+        <TextView
+            android:id="@+id/userProfession"
+            android:gravity="center_horizontal"
+            android:text="Android Developer"
+            app:layout_constraintEnd_toEndOf="@+id/userName"
+            app:layout_constraintStart_toStartOf="@+id/userName"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            style="@style/userInfoProfileStyle" />
+
+        <TextView
+            android:id="@+id/userPlace"
+            style="@style/userInfoProfileStyle"
+            android:gravity="center_horizontal"
+            android:text="New York, US"
+            app:layout_constraintEnd_toEndOf="@+id/userProfession"
+            app:layout_constraintStart_toStartOf="@+id/userProfession"
+            app:layout_constraintTop_toBottomOf="@id/userProfession" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userCardLayout"
+            android:layout_width="370dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_card_layout"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toTopOf="@id/userAbout"
+            app:layout_constraintEnd_toEndOf="@+id/userPlace"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/userPlace"
+            app:layout_constraintTop_toBottomOf="@id/userPlace">
+
+
+            <TextView
+                android:id="@+id/userFollowers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Followers"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/userFollowersNumber"
+                app:layout_constraintEnd_toStartOf="@+id/userFollowing"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Following"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/userFollowers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/userFollowers"
+                app:layout_constraintTop_toTopOf="@+id/userFollowers" />
+
+            <TextView
+                android:id="@+id/userFollowersNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="49"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/userFollowers"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/userFollowers"
+                app:layout_constraintTop_toBottomOf="@+id/userFollowers" />
+
+            <TextView
+                android:id="@+id/userFollowingNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="124"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/userFollowersNumber"
+                app:layout_constraintEnd_toEndOf="@+id/userFollowing"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/userFollowing"
+                app:layout_constraintTop_toTopOf="@+id/userFollowersNumber" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/userAbout"
+            style="@style/promptProfileStyle"
+            android:layout_marginTop="15dp"
+            android:text="About Me"
+            app:layout_constraintBottom_toTopOf="@id/userAboutDetails"
+            app:layout_constraintEnd_toEndOf="@+id/userCardLayout"
+            app:layout_constraintStart_toStartOf="@+id/userCardLayout"
+            app:layout_constraintTop_toBottomOf="@id/userCardLayout" />
+
+        <TextView
+            android:id="@+id/userAboutDetails"
+            style="@style/userInfoProfileStyle"
+            android:text="Budding and passionate Android Developer who loves to design beautiful and impressive applications. I like playing guitar and baking cookies in my free time. Connect with me!!"
+            app:layout_constraintBottom_toTopOf="@id/userContact"
+            app:layout_constraintEnd_toEndOf="@+id/userAbout"
+            app:layout_constraintStart_toStartOf="@+id/userAbout"
+            app:layout_constraintTop_toBottomOf="@id/userAbout" />
+
+        <TextView
+            android:id="@+id/userContact"
+            style="@style/promptProfileStyle"
+            android:layout_marginTop="10dp"
+            android:text="Connect With Me"
+            app:layout_constraintEnd_toEndOf="@+id/userAboutDetails"
+            app:layout_constraintStart_toStartOf="@+id/userAboutDetails"
+            app:layout_constraintTop_toBottomOf="@id/userAboutDetails" />
+
+        <ImageView
+            android:id="@+id/userMail"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_email"
+            app:layout_constraintBottom_toTopOf="@id/userWebsite"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@+id/userContact"
+            app:layout_constraintTop_toBottomOf="@id/userContact" />
+
+        <ImageView
+            android:id="@+id/userWebsite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_web"
+            app:layout_constraintBottom_toTopOf="@+id/editButton"
+            app:layout_constraintEnd_toEndOf="@+id/userMail"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/userMail"
+            app:layout_constraintTop_toBottomOf="@+id/userMail"
+            app:layout_editor_absoluteX="30dp" />
+
+        <Button
+            android:id="@+id/editButton"
+            style="@style/customButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#80018786"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Edit Profile"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+            app:layout_constraintStart_toStartOf="@+id/userContact"
+            app:layout_constraintTop_toBottomOf="@+id/userContact"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <Button
+            android:id="@+id/logoutButton"
+            style="@style/customButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#80018786"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Logout"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editButton"
+            app:layout_constraintEnd_toEndOf="@+id/userContact"
+            app:layout_constraintStart_toEndOf="@+id/editButton"
+            app:layout_constraintTop_toTopOf="@+id/editButton" />
+
+        <TextView
+            android:id="@+id/userMailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="anjelajoy@gmail.com"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/userMail"
+            app:layout_constraintEnd_toEndOf="@+id/userContact"
+            app:layout_constraintHorizontal_bias="0.23"
+            app:layout_constraintStart_toEndOf="@+id/userMail"
+            app:layout_constraintTop_toTopOf="@+id/userMail" />
+
+        <TextView
+            android:id="@+id/userWebsiteLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="angelablogs.com"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/userWebsite"
+            app:layout_constraintEnd_toEndOf="@+id/userMailText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/userMailText"
+            app:layout_constraintTop_toTopOf="@+id/userWebsite" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
