@@ -9,13 +9,15 @@
     </style>
 
     <style name="customButtonStyle">
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingTop">9dp</item>
         <item name="android:paddingBottom">9dp</item>
         <item name="android:paddingLeft">14dp</item>
         <item name="android:paddingRight">14dp</item>
         <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/comfortaa_bold</item>
+        <item name="backgroundTint">@color/green</item>
         <item name="cornerRadius">10dp</item>
     </style>
 
@@ -72,13 +74,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/comfortaa_bold</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="userInfoProfileStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
         <item name="android:fontFamily">@font/comfortaa_bold</item>
         <item name="android:textColor">#757575</item>
         <item name="android:textSize">14sp</item>
