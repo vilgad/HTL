@@ -27,8 +27,10 @@
         <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2165" />
         <entry key="app/src/main/res/layout/course_view.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/current_course_view.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_completed_courses.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/fragment_my_courses.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_on_going_courses.xml" value="0.38385416666666666" />
       </map>
     </option>
   </component>

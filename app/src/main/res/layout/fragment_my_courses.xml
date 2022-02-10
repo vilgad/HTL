@@ -48,31 +48,22 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayoutMyCourses"
                     android:layout_width="match_parent"
-                    app:tabMode="fixed"
-                    app:tabIndicatorFullWidth="@bool/car_ui_focus_area_default_focus_overrides_history"
-                    app:tabIndicatorColor="@color/green"
-                    app:tabSelectedTextColor="@color/green"
+                    android:layout_height="wrap_content"
                     app:tabIndicatorAnimationMode="elastic"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.tabs.TabItem
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ongoing" />
-
-                    <com.google.android.material.tabs.TabItem
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Completed" />
+                    app:tabIndicatorColor="@color/green"
+                    app:tabIndicatorFullWidth="@bool/car_ui_focus_area_default_focus_overrides_history"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@color/green">
                 </com.google.android.material.tabs.TabLayout>
             </FrameLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/myCoursesRecyclerView"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerMyCourses"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:layout_height="match_parent"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

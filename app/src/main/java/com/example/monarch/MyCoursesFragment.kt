@@ -6,25 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monarch.databinding.CurrentCourseViewBinding
 import com.example.monarch.databinding.FragmentMyCoursesBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MyCoursesFragment : Fragment() {
     private lateinit var binding: FragmentMyCoursesBinding
-    private lateinit var myCoursesRecyclerViewAdapter: MyCoursesRecyclerViewAdapter
-
-    val lst: List<Course> = listOf(
-        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
-        Course("MVVM Series", "FoxAndroid", "35k"),
-        Course("Android Development", "Cheezy Code", "25 million"),
-        Course("Flutter - One Video", "Apna College", "2 crore"),
-        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
-        Course("MVVM Series", "FoxAndroid", "35k"),
-        Course("Android Development", "Cheezy Code", "25 million"),
-        Course("Flutter - One Video", "Apna College", "2 crore")
-    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,12 +23,15 @@ class MyCoursesFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_my_courses, container, false)
 
-        val linearLayoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.myCoursesRecyclerView.layoutManager = linearLayoutManager
+        val adapter = MyCoursesVPAdapter(requireActivity().supportFragmentManager,lifecycle)
+        binding.viewPagerMyCourses.adapter = adapter
 
-        myCoursesRecyclerViewAdapter = MyCoursesRecyclerViewAdapter(lst)
-        binding.myCoursesRecyclerView.adapter = myCoursesRecyclerViewAdapter
+        TabLayoutMediator(binding.tabLayoutMyCourses,binding.viewPagerMyCourses) {
+            tab,position -> when(position) {
+                0 -> tab.text = "Ongoing"
+                1 -> tab.text = "Completed"
+            }
+        }.attach()
         // Inflate the layout for this fragment
         return binding.root
     }
