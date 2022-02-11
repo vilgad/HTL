@@ -18,7 +18,8 @@
             android:padding="10dp"
             android:layout_margin="5dp"
             android:textSize="15sp"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/black"
+            android:fontFamily="@font/andika"
             android:layout_weight="1"
             tools:text="Development" />
     </LinearLayout>
