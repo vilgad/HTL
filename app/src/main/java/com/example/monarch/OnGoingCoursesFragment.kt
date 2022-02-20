@@ -31,7 +31,7 @@ class OnGoingCoursesFragment : Fragment() {
 
         getPlaylists()
 
-
+        binding.btNextCourse.setOnClickListener { getPlaylists() }
         // Inflate the layout for this fragment
         return binding.root
     }
