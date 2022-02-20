@@ -1,7 +1,5 @@
 package com.example.monarch
 
-data class Thumbnails(val default: Default)
-data class Default(val url: String)
 data class SearchPlaylists(
     val pageInfo: PageInfo,
     val items: List<SearchItems>,
