@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.monarch.databinding.CurrentCourseViewBinding
 
 class MyCoursesRecyclerViewAdapter(
-    private val list: List<Course>
+    private val list: List<SearchItems>
 ): RecyclerView.Adapter<MyCoursesRecyclerViewAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding: CurrentCourseViewBinding = DataBindingUtil.inflate(
@@ -26,10 +27,10 @@ class MyCoursesRecyclerViewAdapter(
     }
 
     class MyViewHolder(val binding: CurrentCourseViewBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Course) {
-            binding.tvCurrentCourseName.text = item.name
-            binding.tvCurrentCourseAuthor.text = item.author
-            binding.ivCurrentCourseBanner.setImageResource(R.drawable._458571)
+        fun bind(item: SearchItems) {
+            binding.tvCurrentCourseName.text = item.snippet.title
+            binding.tvCurrentCourseAuthor.text = item.snippet.channelTitle
+            Glide.with(binding.root).load(item.snippet.thumbnails.default.url).into(binding.ivCurrentCourseBanner)
         }
     }
 }

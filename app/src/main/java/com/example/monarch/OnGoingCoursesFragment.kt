@@ -1,6 +1,7 @@
 package com.example.monarch
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,21 +10,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monarch.databinding.FragmentOnGoingCoursesBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class OnGoingCoursesFragment : Fragment() {
+    private var PAGE_TOKEN = "CAUQAQ"
     private lateinit var binding: FragmentOnGoingCoursesBinding
     private lateinit var myCoursesRecyclerViewAdapter: MyCoursesRecyclerViewAdapter
 
-    val lst: List<Course> = listOf(
-        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
-        Course("MVVM Series", "FoxAndroid", "35k"),
-        Course("Android Development", "Cheezy Code", "25 million"),
-        Course("Flutter - One Video", "Apna College", "2 crore"),
-        Course("Web Development", "CodeWithHarry", "2.5 lakh"),
-        Course("MVVM Series", "FoxAndroid", "35k"),
-        Course("Android Development", "Cheezy Code", "25 million"),
-        Course("Flutter - One Video", "Apna College", "2 crore")
-    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,9 +29,27 @@ class OnGoingCoursesFragment : Fragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.onGoingCoursesRV.layoutManager = linearLayoutManager
 
-        myCoursesRecyclerViewAdapter = MyCoursesRecyclerViewAdapter(lst)
-        binding.onGoingCoursesRV.adapter = myCoursesRecyclerViewAdapter
+        getPlaylists()
+
+
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    private fun getPlaylists() {
+        val playlist = SearchService.searchInstance.getPlaylists("Development",PAGE_TOKEN)
+        playlist.enqueue(object : Callback<SearchPlaylists> {
+            override fun onResponse(call: Call<SearchPlaylists>, response: Response<SearchPlaylists>) {
+                val playl = response.body()
+                Log.d("Vilgad",playl.toString())
+                myCoursesRecyclerViewAdapter = MyCoursesRecyclerViewAdapter(playl!!.items)
+                binding.onGoingCoursesRV.adapter = myCoursesRecyclerViewAdapter
+                PAGE_TOKEN = playl.nextPageToken
+            }
+
+            override fun onFailure(call: Call<SearchPlaylists>, t: Throwable) {
+                Log.d("Vilgad","Error in fetching playlists")
+            }
+        })
     }
 }
