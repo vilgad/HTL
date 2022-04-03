@@ -1,9 +1,11 @@
-package com.example.monarch
+package com.example.monarch.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.monarch.dataClasses.Course
+import com.example.monarch.R
 import com.example.monarch.databinding.CourseViewBinding
 
 class CoursesRecyclerViewAdapter(

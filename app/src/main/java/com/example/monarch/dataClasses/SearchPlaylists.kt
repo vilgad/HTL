@@ -1,4 +1,4 @@
-package com.example.monarch
+package com.example.monarch.dataClasses
 
 data class SearchPlaylists(
     val pageInfo: PageInfo,

@@ -1,4 +1,4 @@
-package com.example.monarch
+package com.example.monarch.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.monarch.dataClasses.Course
+import com.example.monarch.adapters.CoursesRecyclerViewAdapter
+import com.example.monarch.R
 import com.example.monarch.databinding.FragmentCoursesBinding
 
 class CoursesFragment : Fragment() {

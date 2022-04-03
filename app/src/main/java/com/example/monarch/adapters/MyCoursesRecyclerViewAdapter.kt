@@ -1,10 +1,12 @@
-package com.example.monarch
+package com.example.monarch.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.monarch.R
+import com.example.monarch.dataClasses.SearchItems
 import com.example.monarch.databinding.CurrentCourseViewBinding
 
 class MyCoursesRecyclerViewAdapter(

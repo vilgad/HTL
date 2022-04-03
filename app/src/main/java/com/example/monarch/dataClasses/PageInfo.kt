@@ -1,4 +1,4 @@
-package com.example.monarch
+package com.example.monarch.dataClasses
 
 data class PageInfo(val totalResults: Int)
 data class Thumbnails(val default: Default)

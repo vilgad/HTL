@@ -1,9 +1,11 @@
-package com.example.monarch
+package com.example.monarch.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.monarch.fragments.CompletedCoursesFragment
+import com.example.monarch.fragments.OnGoingCoursesFragment
 
 class MyCoursesVPAdapter(
     fragmentManager: FragmentManager,

@@ -1,4 +1,4 @@
-package com.example.monarch
+package com.example.monarch.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.monarch.adapters.MyCoursesRecyclerViewAdapter
+import com.example.monarch.R
+import com.example.monarch.dataClasses.SearchPlaylists
+import com.example.monarch.apiClasses.SearchService
 import com.example.monarch.databinding.FragmentOnGoingCoursesBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,7 +27,8 @@ class OnGoingCoursesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_on_going_courses, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater,
+            R.layout.fragment_on_going_courses, container, false)
 
         val linearLayoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)

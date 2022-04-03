@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.monarch.HomeFragment"
+        android:name="com.example.monarch.fragments.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/myCoursesFragment"
-        android:name="com.example.monarch.MyCoursesFragment"
+        android:name="com.example.monarch.fragments.MyCoursesFragment"
         android:label="MyCoursesFragment"
         tools:layout="@layout/fragment_my_courses"/>
     <fragment
         android:id="@+id/coursesFragment"
-        android:name="com.example.monarch.CoursesFragment"
+        android:name="com.example.monarch.fragments.CoursesFragment"
         android:label="CoursesFragment"
         tools:layout="@layout/fragment_courses"/>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.monarch.ProfileFragment"
+        android:name="com.example.monarch.fragments.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 </navigation>

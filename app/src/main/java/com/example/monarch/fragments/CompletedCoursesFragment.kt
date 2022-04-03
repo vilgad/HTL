@@ -1,4 +1,4 @@
-package com.example.monarch
+package com.example.monarch.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.monarch.adapters.MyCoursesRecyclerViewAdapter
+import com.example.monarch.R
 import com.example.monarch.databinding.FragmentCompletedCoursesBinding
 
 class CompletedCoursesFragment : Fragment() {
@@ -29,7 +29,8 @@ class CompletedCoursesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(layoutInflater,R.layout.fragment_completed_courses, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater,
+            R.layout.fragment_completed_courses, container, false)
 
 //        val linearLayoutManager: RecyclerView.LayoutManager =
 //            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
