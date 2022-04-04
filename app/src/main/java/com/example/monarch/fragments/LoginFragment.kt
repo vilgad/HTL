@@ -10,8 +10,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.example.monarch.MainActivity
 import com.example.monarch.R
 import com.example.monarch.databinding.FragmentLoginBinding
+import com.example.monarch.viewModelFactory.AuthVMFactory
+import com.example.monarch.viewModels.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -21,19 +26,22 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var auth: FirebaseAuth
+    private lateinit var authViewModel: AuthViewModel
     private lateinit var googleSignInClient: GoogleSignInClient
-    private val RC_SIGN_IN: Int = 12
+    private val RC_SIGN_IN: Int = 123
 
-    override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-//            TODO("Direct to profile page")
-            Toast.makeText(requireContext(), "Current user Logged in already", Toast.LENGTH_SHORT)
-                .show()
-//            startActivity(Intent(this,ProfileActivity::class.java))
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        authViewModel = ViewModelProvider(
+            this, AuthVMFactory(requireActivity().application)
+        ).get(AuthViewModel::class.java)
+
+        authViewModel.firebaseUserLiveData.observe(this) {
+            if (it != null) {
+                Navigation.findNavController(requireView())
+                    .navigate(R.id.action_loginFragment_to_homeFragment)
+            }
         }
     }
 
@@ -42,21 +50,25 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_login, container, false)
-        auth = FirebaseAuth.getInstance()
 
+        binding.btSignInWithGoogle.setOnClickListener { signIn() }
+
+        (activity as MainActivity).hideBottomNavBar(true)
+        // Inflate the layout for this fragment
+        return binding.root
+    }
+
+    private fun createRequest() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.client_id))
             .requestEmail()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
-
-        binding.btSignInWithGoogle.setOnClickListener { signIn() }
-        // Inflate the layout for this fragment
-        return binding.root
     }
 
     private fun signIn() {
+        createRequest()
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
@@ -71,29 +83,11 @@ class LoginFragment : Fragment() {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d(ContentValues.TAG, "firebaseAuthWithGoogle:" + account.id)
-                firebaseAuthWithGoogle(account.idToken!!)
+                authViewModel.firebaseAuthenticationWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener() { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    val user = auth.currentUser
-                    if (user != null) {
-                        Toast.makeText(requireContext(), "Signed in", Toast.LENGTH_SHORT).show()
-//                        startActivity(Intent(this,ProfileActivity::class.java))
-                    }
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(requireContext(), "Sorry auth failed", Toast.LENGTH_SHORT).show()
-                }
-            }
     }
 }

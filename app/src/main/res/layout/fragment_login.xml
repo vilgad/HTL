@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:fontFamily="@font/comfortaa_bold"
+            android:fontFamily="@font/andika"
             android:text="Let's Start Learning"
             android:textColor="@color/white"
             android:textSize="30sp"

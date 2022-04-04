@@ -2,6 +2,7 @@ package com.example.monarch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -18,5 +19,13 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         binding.mainBottomNav.setupWithNavController(navController)
+    }
+
+    fun hideBottomNavBar(choice: Boolean) {
+        if (choice) {
+            binding.mainBottomNav.visibility = View.GONE
+        } else {
+            binding.mainBottomNav.visibility = View.VISIBLE
+        }
     }
 }

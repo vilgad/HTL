@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.monarch.MainActivity
 import com.example.monarch.adapters.CategeoryRecyclerViewAdapter
 import com.example.monarch.dataClasses.Course
 import com.example.monarch.adapters.CoursesRecyclerViewAdapter
@@ -54,6 +55,8 @@ class HomeFragment : Fragment() {
         binding.ivCurrentCourseBannerHome.setImageResource(R.drawable._458571)
         binding.tvCurrentCourseNameHome.text = lst[0].name
         binding.tvCurrentCourseAuthorHome.text = lst[0].author
+
+        (activity as MainActivity).hideBottomNavBar(false)
         // Inflate the layout for this fragment
         return binding.root
     }

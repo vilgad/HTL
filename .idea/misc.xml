@@ -36,6 +36,7 @@
         <entry key="app/src/main/res/drawable/ic_wishlist.xml" value="0.357" />
         <entry key="app/src/main/res/drawable/tab_indicator.xml" value="0.2165" />
         <entry key="app/src/main/res/drawable/wishlist_item.xml" value="0.2955" />
+        <entry key="app/src/main/res/font/comfortaa_bold.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/categeory_view.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/course_view.xml" value="0.5" />
@@ -44,6 +45,7 @@
         <entry key="app/src/main/res/layout/fragment_courses.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.33229166666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.38385416666666666" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.3177083333333333" />
         <entry key="app/src/main/res/layout/fragment_my_courses.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_on_going_courses.xml" value="0.38385416666666666" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33229166666666665" />
